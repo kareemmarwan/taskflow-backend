@@ -8,9 +8,7 @@ const {
   generateRefreshToken,
 } = require("../Utils/generateToken");
 
-/* =========================
-   Helpers
-========================= */
+
 const validateEmail = (email) => {
   const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   return regex.test(email);
@@ -22,9 +20,7 @@ const validatePassword = (password) =>
 const isValidGender = (gender) =>
   ["male", "female", "other"].includes(gender?.toLowerCase());
 
-/* =========================
-   Users
-========================= */
+
 
 // @desc Get all users
 // @route GET /api/users
@@ -179,9 +175,7 @@ const getMe = asyncHandler(async (req, res) => {
   res.status(200).json(req.user);
 });
 
-/* =========================
-   Password & Email
-========================= */
+
 
 // @desc Send reset code
 // @route POST /api/users/sendcode
@@ -236,9 +230,7 @@ const newPassword = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Password updated successfully" });
 });
 
-/* =========================
-   Tokens
-========================= */
+
 
 // @desc Refresh access token
 // @route POST /api/users/refresh
@@ -266,9 +258,7 @@ const refreshToken = asyncHandler(async (req, res) => {
   }
 });
 
-/* =========================
-   Export
-========================= */
+
 module.exports = {
   getUsers,
   registerUser,

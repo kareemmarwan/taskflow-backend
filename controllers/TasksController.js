@@ -1,15 +1,9 @@
 const asyncHandler = require("express-async-handler");
 const Task = require("../models/taskModel");
 
-/* =========================
-   Helpers
-========================= */
+
 const isValidStatus = (status) =>
   ["todo", "in_progress", "done"].includes(status?.toLowerCase());
-
-/* =========================
-   Tasks Logic
-========================= */
 
 // @desc Get all tasks for logged in user
 // @route GET /api/tasks
@@ -102,9 +96,7 @@ const getTaskById = asyncHandler(async (req, res) => {
   res.status(200).json(task);
 });
 
-/* =========================
-   Export
-========================= */
+
 module.exports = {
   getTasks,
   createTask,
